@@ -2,8 +2,8 @@
     {
         "category": "App Introduction",
         "categoryKor": "App Introduction",
-        "title": "What is CloudTalk?",
-        "answer": "CloudTalk is an app that allows secure and private chat using your Apple iCloud account. You can create chat rooms, invite friends, and exchange messages. All conversations are securely stored in your personal iCloud account."
+        "title": "What is GureumTalk?",
+        "answer": "GureumTalk is an app that allows secure and private chat using your Apple iCloud account. You can create chat rooms, invite friends, and exchange messages. All conversations are securely stored in your personal iCloud account."
     },
     {
         "category": "Chat Rooms",
@@ -32,14 +32,14 @@
     {
         "category": "Device Management",
         "categoryKor": "Device Management",
-        "title": "Can I use CloudTalk on multiple devices?",
-        "answer": "Yes, you can. You can use CloudTalk on multiple Apple devices such as iPhone and iPad with the same iCloud account, and your chat history will be synchronized across all devices."
+        "title": "Can I use GureumTalk on multiple devices?",
+        "answer": "Yes, you can. You can use GureumTalk on multiple Apple devices such as iPhone and iPad with the same iCloud account, and your chat history will be synchronized across all devices."
     },
     {
         "category": "Security & Privacy",
         "categoryKor": "Security & Privacy",
         "title": "Is my data securely protected?",
-        "answer": "Yes, CloudTalk securely stores all your data in your personal iCloud account. Sensitive information remains private, and only necessary information is shared with other users. All communications are encrypted and transmitted securely."
+        "answer": "Yes, GureumTalk securely stores all your data in your personal iCloud account. Sensitive information remains private, and only necessary information is shared with other users. All communications are encrypted and transmitted securely."
     },
     {
         "category": "Troubleshooting",

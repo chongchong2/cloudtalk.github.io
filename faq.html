@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">CloudTalk 자주 묻는 질문 (FAQ)</title>
+    <title id="pageTitle"></title>
     <style>
         /* CSS 변수: 색상 및 스타일 관리 */
         :root {
@@ -193,7 +193,7 @@
 
     <div class="faq-container">
         <header class="faq-header">
-            <h2 id="mainTitle">CloudTalk 자주 묻는 질문 (FAQ)</h2>
+            <h2 id="mainTitle"></h2>
             <select id="languageSelector" class="language-selector">
                 <option value="ko">한국어</option>
                 <option value="en">English</option>
@@ -380,14 +380,10 @@
                         return 'zh-Hans';
                     } else if (browserLang.includes('Hant') || browserLang.includes('TW')) {
                         return 'zh-Hant';
-                    } else {
-                        // Default generic Chinese to Simplified
-                        return 'zh-Hans';
                     }
-                } else {
-                    // Fallback to English if no match, or Korean as a primary default
-                    return 'ko'; // Or 'en' if English is preferred global default
-                }
+                } 
+                // Fallback to Korean as a primary default if no match
+                return 'ko';
             }
 
             // Initialize language based on localStorage, then browser language, then default to 'ko'

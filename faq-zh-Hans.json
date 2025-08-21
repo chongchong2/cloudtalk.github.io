@@ -2,8 +2,8 @@
     {
         "category": "应用介绍",
         "categoryKor": "应用介绍",
-        "title": "CloudTalk 是什么应用？",
-        "answer": "CloudTalk 是一款使用 Apple iCloud 账户进行安全私密聊天的应用程序。您可以创建聊天室，邀请朋友，并交换消息。所有对话都安全地存储在您的个人 iCloud 账户中。"
+        "title": "云语聊 是什么应用？",
+        "answer": "云语聊 是一款使用 Apple iCloud 账户进行安全私密聊天的应用程序。您可以创建聊天室，邀请朋友，并交换消息。所有对话都安全地存储在您的个人 iCloud 账户中。"
     },
     {
         "category": "聊天室",
@@ -32,14 +32,14 @@
     {
         "category": "设备管理",
         "categoryKor": "设备管理",
-        "title": "我可以在多台设备上使用 CloudTalk 吗？",
-        "answer": "是的，可以。您可以在 iPhone、iPad 等多台 Apple 设备上使用相同的 iCloud 账户登录 CloudTalk，并且您的聊天记录将在所有设备上同步。"
+        "title": "我可以在多台设备上使用 云语聊 吗？",
+        "answer": "是的，可以。您可以在 iPhone、iPad 等多台 Apple 设备上使用相同的 iCloud 账户登录 云语聊，并且您的聊天记录将在所有设备上同步。"
     },
     {
         "category": "安全与隐私",
         "categoryKor": "安全与隐私",
         "title": "我的数据是否受到安全保护？",
-        "answer": "是的，CloudTalk 将您的所有数据安全地存储在您的个人 iCloud 账户中。敏感信息保持私密，只有必要的信息才会与其他用户共享。所有通信都经过加密并安全传输。"
+        "answer": "是的，云语聊 将您的所有数据安全地存储在您的个人 iCloud 账户中。敏感信息保持私密，只有必要的信息才会与其他用户共享。所有通信都经过加密并安全传输。"
     },
     {
         "category": "故障排除",
