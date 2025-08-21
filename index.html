@@ -1,217 +1,405 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CloudTalk — 프라이빗 채팅</title>
-  <meta name="description" content="CloudTalk는 간단하고 안전한 프라이빗 채팅 앱입니다. 초대 링크로 함께 대화하고, 중요한 순간을 사진·동영상과 함께 공유하세요." />
-  <meta property="og:title" content="CloudTalk — 프라이빗 채팅" />
-  <meta property="og:description" content="간단하고 안전한 프라이빗 채팅. 초대 링크로 바로 합류." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="ko_KR" />
-  <meta name="theme-color" content="#0b6bff" />
-  <style>
-    :root{
-      --bg:#f7f9fc; --panel:#ffffff; --text:#0c1220; --muted:#5a6b7e;
-      --brand:#0b6bff; --accent:#4e89ff; --radius:16px;
-      --shadow:0 8px 28px rgba(12,18,32,.12);
-    }
-    *{ box-sizing:border-box }
-    html,body{ margin:0; padding:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR","Apple SD Gothic Neo",Arial,sans-serif; color:var(--text); background:var(--bg) }
-    a{ color:inherit; text-decoration:none }
-    .container{ max-width:1100px; margin:0 auto; padding:0 20px }
-    header{
-      position:sticky; top:0; z-index:30; background:rgba(255,255,255,.7); backdrop-filter:blur(8px);
-      border-bottom:1px solid rgba(12,18,32,.06)
-    }
-    nav{ height:64px; display:flex; align-items:center; justify-content:space-between }
-    .brand{ display:flex; gap:10px; align-items:center; font-weight:700 }
-    .logo{ width:26px; height:26px; border-radius:8px; background:linear-gradient(135deg,var(--brand),var(--accent)); box-shadow:inset 0 0 0 1px rgba(255,255,255,.35) }
-    .nav-links{ display:flex; gap:18px; font-size:14px; color:var(--muted) }
-    .nav-links a:hover{ color:var(--text) }
-    .btn{ display:inline-flex; align-items:center; gap:8px; height:44px; padding:0 16px; border-radius:12px; border:1px solid rgba(12,18,32,.1); background:#fff; cursor:pointer }
-    .btn.primary{ background:linear-gradient(135deg,var(--brand),var(--accent)); color:#fff; border:none; box-shadow:var(--shadow) }
-    .btn.ghost{ background:transparent }
-    .hero{
-      position:relative; padding:96px 0 64px;
-      background: radial-gradient(1200px 600px at 20% 0, #eaf2ff 0, transparent 55%),
-                  radial-gradient(900px 500px at 85% 0, #eef5ff 0, transparent 60%),
-                  linear-gradient(180deg,#fff,#f7f9fc);
-    }
-    .hero h1{ margin:0 0 14px; font-size:42px; line-height:1.15 }
-    .hero p{ margin:0 0 24px; font-size:18px; color:var(--muted) }
-    .hero-cta{ display:flex; gap:12px; flex-wrap:wrap }
-    section{ padding:28px 0 }
-    h2{ margin:8px 0 18px; font-size:28px }
-    .kicker{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted) }
-    .grid{ display:grid; gap:20px }
-    .cards{ grid-template-columns: repeat(12, 1fr) }
-    .card{
-      grid-column:span 4; background:var(--panel); border:1px solid rgba(12,18,32,.06); border-radius:var(--radius);
-      padding:20px; box-shadow:var(--shadow); transition:transform .2s ease
-    }
-    .card:hover{ transform:translateY(-2px) }
-    .muted{ color:var(--muted) }
-    .screens{
-      display:grid; gap:16px; grid-template-columns:repeat(3,1fr)
-    }
-    .shot{
-      aspect-ratio: 9/19.5; border-radius:18px; background:
-        linear-gradient(180deg,#fafcff,#eef3ff);
-      border:1px solid rgba(12,18,32,.08); box-shadow:var(--shadow);
-      display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:14px
-    }
-    .cta-panel{
-      margin-top:8px; background:var(--panel); border:1px solid rgba(12,18,32,.06);
-      border-radius:var(--radius); padding:20px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between
-    }
-    footer{ margin-top:56px; padding:32px 0 56px; color:var(--muted); border-top:1px solid rgba(12,18,32,.08) }
-    @media (max-width: 920px){
-      .hero h1{ font-size:34px }
-      .card{ grid-column:span 12 }
-      .screens{ grid-template-columns:1fr; gap:12px }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">CloudTalk 자주 묻는 질문 (FAQ)</title>
+    <style>
+        /* CSS 변수: 색상 및 스타일 관리 */
+        :root {
+            --primary-color: #A490E5;
+            --text-color: #333;
+            --secondary-text-color: #888;
+            --border-color: #eee;
+            --background-color: #f9f9f9;
+            --white-color: #fff;
+            --active-tab-bg: var(--primary-color);
+            --active-tab-text: var(--white-color);
+        }
+
+        /* 기본 스타일 초기화 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* 전체 컨테이너 */
+        .faq-container {
+            width: 100%;
+            max-width: 700px;
+            background-color: var(--white-color);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 메인 제목 */
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .faq-header h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            margin-left: 20px;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+        }
+
+        /* 검색창 */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+        }
+
+        .search-bar svg {
+            width: 20px;
+            height: 20px;
+            fill: #999;
+            margin-right: 10px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .search-bar input::placeholder {
+            color: #ccc;
+        }
+
+        /* FAQ 목록 */
+        .faq-list {
+            list-style: none;
+        }
+
+        .faq-item {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .faq-category {
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .faq-title {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        
+        .faq-question svg {
+            width: 16px;
+            height: 16px;
+            fill: #aaa;
+            transition: transform 0.3s ease;
+            flex-shrink: 0; /* 아이콘이 찌그러지지 않도록 */
+            margin-left: 10px;
+        }
+
+        /* 답변 영역 */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* 활성화 상태 스타일 */
+        .faq-item.active .faq-answer {
+            max-height: 500px; /* Adjusted max-height for typical FAQ answers */
+            padding-top: 15px;
+            transition: max-height 0.5s ease-in, padding 0.5s ease-in;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        /* 반응형 디자인: 화면 너비가 600px 이하일 때 (모바일) */
+        @media (max-width: 600px) {
+            .faq-container {
+                padding: 16px;
+            }
+            
+            .faq-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .faq-header h2 {
+                font-size: 22px;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+
+            .language-selector {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .faq-title {
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <a href="#top" aria-label="CloudTalk 홈">CloudTalk</a>
-        </div>
-        <div class="nav-links">
-          <a href="#about">소개</a>
-          <a href="#features">기능</a>
-          <a href="#download">다운로드</a>
-          <a href="#contact">문의</a>
-        </div>
-        <div style="display:flex; gap:8px">
-          <a class="btn ghost" href="#" aria-label="TestFlight 체험">TestFlight</a>
-          <a class="btn primary" href="#" aria-label="App Store">App Store</a>
-        </div>
-      </nav>
+
+    <div class="faq-container">
+        <header class="faq-header">
+            <h2 id="mainTitle">CloudTalk 자주 묻는 질문 (FAQ)</h2>
+            <select id="languageSelector" class="language-selector">
+                <option value="ko">한국어</option>
+                <option value="en">English</option>
+                <option value="zh-Hans">简体中文</option>
+                <option value="zh-Hant">繁體中文</option>
+            </select>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <div class="search-bar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="궁금한 점을 검색해보세요">
+                </div>
+            </section>
+
+            <section class="faq-list-section">
+                <ul class="faq-list"></ul>
+            </section>
+        </main>
     </div>
-  </header>
 
-  <main id="top">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container">
-        <span class="kicker">Private & Simple</span>
-        <h1>가장 간단한 프라이빗 채팅</h1>
-        <p>가족, 친구, 팀과 빠르게 대화방을 만들고 초대 링크로 바로 합류하세요. 필요한 건 단 하나, CloudTalk뿐.</p>
-        <div class="hero-cta">
-          <a class="btn primary" href="#" aria-label="App Store 바로가기">App Store에서 받기</a>
-          <a class="btn" href="#features">주요 기능 보기</a>
-        </div>
-      </div>
-    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqList = document.querySelector('.faq-list');
+            const searchInput = document.getElementById('searchInput');
+            const languageSelector = document.getElementById('languageSelector');
+            const mainTitle = document.getElementById('mainTitle');
+            const pageTitle = document.getElementById('pageTitle');
 
-    <!-- 간단 소개 -->
-    <section id="about">
-      <div class="container">
-        <h2>CloudTalk 소개</h2>
-        <p class="muted">CloudTalk는 “필요한 것만” 담은 프라이빗 채팅 앱입니다. 초대 링크로 사람들을 모으고, 텍스트와 사진·동영상을 손쉽게 공유하세요. 불필요한 공개 프로필이나 복잡한 절차 없이, 일상 대화에 집중할 수 있도록 만들었습니다.</p>
-      </div>
-    </section>
+            const translations = {
+                "ko": {
+                    "mainTitle": "구름톡 자주 묻는 질문 (FAQ)",
+                    "pageTitle": "구름톡 자주 묻는 질문 (FAQ)",
+                    "searchPlaceholder": "궁금한 점을 검색해보세요",
+                    "appName": "구름톡"
+                },
+                "en": {
+                    "mainTitle": "GureumTalk Frequently Asked Questions (FAQ)",
+                    "pageTitle": "GureumTalk Frequently Asked Questions (FAQ)",
+                    "searchPlaceholder": "Search for your questions",
+                    "appName": "GureumTalk"
+                },
+                "zh-Hans": {
+                    "mainTitle": "云语聊 常见问题 (FAQ)",
+                    "pageTitle": "云语聊 常见问题 (FAQ)",
+                    "searchPlaceholder": "搜索您的问题",
+                    "appName": "云语聊"
+                },
+                "zh-Hant": {
+                    "mainTitle": "雲聊 常見問題 (FAQ)",
+                    "pageTitle": "雲聊 常見問題 (FAQ)",
+                    "searchPlaceholder": "搜尋您的問題",
+                    "appName": "雲聊"
+                }
+            };
 
-    <!-- 기능 요약 (기술 비공개) -->
-    <section id="features">
-      <div class="container">
-        <h2>주요 기능</h2>
-        <div class="grid cards">
-          <div class="card">
-            <div class="kicker">Invite</div>
-            <h3 style="margin:6px 0 8px">링크로 초대</h3>
-            <p class="muted">대화방을 만들고 링크를 공유하면 끝. 누구나 손쉽게 참여할 수 있어요.</p>
-          </div>
-          <div class="card">
-            <div class="kicker">Media</div>
-            <h3 style="margin:6px 0 8px">사진·동영상 공유</h3>
-            <p class="muted">텍스트뿐 아니라 사진과 동영상도 편하게 주고받기.</p>
-          </div>
-          <div class="card">
-            <div class="kicker">Focus</div>
-            <h3 style="margin:6px 0 8px">알림으로 즉시 확인</h3>
-            <p class="muted">새 메시지를 놓치지 않도록 필요한 알림만 깔끔하게 받아보세요.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+            let currentFaqData = [];
 
-    <!-- 스크린샷 영역 (이미지 교체만 하면 됨) -->
-    <section id="screens">
-      <div class="container">
-        <h2>앱 미리보기</h2>
-        <div class="screens">
-          <!-- 실제 스크린샷 PNG/JPG로 교체하세요 -->
-          <div class="shot">스크린샷 1 (upload: /images/shot1.png)</div>
-          <div class="shot">스크린샷 2 (upload: /images/shot2.png)</div>
-          <div class="shot">스크린샷 3 (upload: /images/shot3.png)</div>
-        </div>
-        <div class="cta-panel" id="download">
-          <div>
-            <div class="kicker">Download</div>
-            <div style="font-size:18px; margin-top:6px">지금 CloudTalk를 사용해 보세요</div>
-          </div>
-          <div style="display:flex; gap:10px">
-            <!-- TODO: 실제 링크로 교체 -->
-            <a class="btn" href="#" aria-label="TestFlight 체험">TestFlight</a>
-            <a class="btn primary" href="#" aria-label="App Store">App Store</a>
-          </div>
-        </div>
-      </div>
-    </section>
+            async function loadLanguage(lang) {
+                try {
+                    const response = await fetch(`faq-${lang}.json`);
+                    if (!response.ok) {
+                        throw new Error(`Failed to load FAQ data for ${lang}: ${response.statusText}`);
+                    }
+                    currentFaqData = await response.json();
+                    renderFaqList();
+                    updateStaticText(lang);
+                    filterAndSearch(); // Re-filter after loading new language
+                    handleUrlFragment(); // Handle URL fragment after content is rendered
+                } catch (error) {
+                    console.error(error);
+                    faqList.innerHTML = `<p style="text-align: center; color: red;">Error loading FAQs. Please try again later.</p>`;
+                }
+            }
 
-    <!-- 간단 FAQ (원론적 표현만) -->
-    <section id="faq">
-      <div class="container">
-        <h2>자주 묻는 질문</h2>
-        <details>
-          <summary>무료인가요?</summary>
-          <p class="muted">다운로드는 무료입니다. 일부 기능은 인앱 구매가 포함될 수 있습니다.</p>
-        </details>
-        <details>
-          <summary>어떤 기기에서 사용할 수 있나요?</summary>
-          <p class="muted">iPhone에서 사용할 수 있습니다. 향후 지원 범위는 업데이트 노트를 통해 안내드릴 예정입니다.</p>
-        </details>
-        <details>
-          <summary>개인정보는 어떻게 보호되나요?</summary>
-          <p class="muted">CloudTalk는 불필요한 공개 정보를 요구하지 않으며, 대화에 집중할 수 있도록 기본적인 프라이버시를 지향합니다.</p>
-        </details>
-      </div>
-    </section>
+            function renderFaqList() {
+                faqList.innerHTML = '';
+                currentFaqData.forEach((item, index) => {
+                    const itemId = (index + 1).toString(); // Assign numerical ID
+                    const listItem = document.createElement('li');
+                    listItem.className = 'faq-item';
+                    listItem.setAttribute('data-category', item.category);
+                    listItem.id = itemId; // Assign the ID
 
-    <!-- 문의 -->
-    <section id="contact">
-      <div class="container">
-        <h2>문의</h2>
-        <p class="muted">사용 중 불편 사항이나 제안이 있다면 알려주세요.</p>
-        <!-- TODO: 이메일/폼 링크 교체 -->
-        <p><a class="btn" href="mailto:hello@example.com" aria-label="이메일 문의">이메일 보내기</a></p>
-      </div>
-    </section>
-  </main>
+                    listItem.innerHTML = `
+                        <div class="faq-question">
+                            <div class="faq-text">
+                                <div class="faq-category">${item.categoryKor}</div>
+                                <p class="faq-title">${item.title}</p>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                        </div>
+                        <div class="faq-answer">
+                            ${item.answer}
+                        </div>
+                    `;
+                    faqList.appendChild(listItem);
+                });
+            }
 
-  <footer>
-    <div class="container" style="display:flex; gap:24px; flex-wrap:wrap; align-items:center; justify-content:space-between">
-      <div>© <span id="year"></span> CloudTalk</div>
-      <div class="muted" style="font-size:12px">표시된 상표는 각 소유자의 자산입니다.</div>
-    </div>
-  </footer>
+            function updateStaticText(lang) {
+                mainTitle.textContent = translations[lang].mainTitle;
+                pageTitle.textContent = translations[lang].pageTitle;
+                searchInput.placeholder = translations[lang].searchPlaceholder;
+            }
 
-  <script>
-    // 부드러운 스크롤
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const id=a.getAttribute('href').slice(1);
-        const el=document.getElementById(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}) }
-      })
-    });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+            function filterAndSearch() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const faqItems = document.querySelectorAll('.faq-item');
+
+                faqItems.forEach(item => {
+                    const category = item.getAttribute('data-category').toLowerCase();
+                    const title = item.querySelector('.faq-title').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+                    const matchesSearch = (category.includes(searchTerm) || title.includes(searchTerm) || answer.includes(searchTerm));
+
+                    if (matchesSearch) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            function handleUrlFragment() {
+                if (window.location.hash) {
+                    const targetId = window.location.hash.substring(1); // Remove the #
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        // Close all other active items first
+                        document.querySelectorAll('.faq-item.active').forEach(item => {
+                            item.classList.remove('active');
+                        });
+
+                        // Expand the target item
+                        targetElement.classList.add('active');
+
+                        // Scroll to the target item
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            }
+
+            function setupEventListeners() {
+                searchInput.addEventListener('input', filterAndSearch);
+
+                faqList.addEventListener('click', function(e) {
+                    const question = e.target.closest('.faq-question');
+                    if (question) {
+                        const faqItem = question.parentElement;
+                        faqItem.classList.toggle('active');
+                    }
+                });
+
+                languageSelector.addEventListener('change', (event) => {
+                    const selectedLang = event.target.value;
+                    localStorage.setItem('cloudtalkFaqLang', selectedLang);
+                    loadLanguage(selectedLang);
+                });
+
+                // Listen for hash changes (e.g., if user navigates within the page using hash links)
+                window.addEventListener('hashchange', handleUrlFragment);
+            }
+
+            // Function to detect browser language and map to supported languages
+            function getBrowserLanguage() {
+                const browserLang = navigator.language || navigator.languages[0];
+                
+                if (browserLang.startsWith('ko')) {
+                    return 'ko';
+                } else if (browserLang.startsWith('en')) {
+                    return 'en';
+                } else if (browserLang.startsWith('zh')) {
+                    // Differentiate Simplified and Traditional Chinese
+                    if (browserLang.includes('Hans') || browserLang.includes('CN')) {
+                        return 'zh-Hans';
+                    } else if (browserLang.includes('Hant') || browserLang.includes('TW')) {
+                        return 'zh-Hant';
+                    } else {
+                        // Default generic Chinese to Simplified
+                        return 'zh-Hans';
+                    }
+                } else {
+                    // Fallback to English if no match, or Korean as a primary default
+                    return 'ko'; // Or 'en' if English is preferred global default
+                }
+            }
+
+            // Initialize language based on localStorage, then browser language, then default to 'ko'
+            const savedLang = localStorage.getItem('cloudtalkFaqLang');
+            const initialLang = savedLang || getBrowserLanguage();
+
+            // Set the selector value to ensure it matches the loaded language
+            languageSelector.value = initialLang;
+            loadLanguage(initialLang);
+            setupEventListeners();
+        });
+    </script>
+
 </body>
 </html>

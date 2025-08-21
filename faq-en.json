@@ -1,0 +1,56 @@
+[
+    {
+        "category": "App Introduction",
+        "categoryKor": "App Introduction",
+        "title": "What is CloudTalk?",
+        "answer": "CloudTalk is an app that allows secure and private chat using your Apple iCloud account. You can create chat rooms, invite friends, and exchange messages. All conversations are securely stored in your personal iCloud account."
+    },
+    {
+        "category": "Chat Rooms",
+        "categoryKor": "Chat Rooms",
+        "title": "How do I create a new chat room?",
+        "answer": "You can easily create a new chat room using the 'Create New Chat Room' feature in the app. When you create a chat room, it is securely generated in your iCloud account."
+    },
+    {
+        "category": "Messages",
+        "categoryKor": "Messages",
+        "title": "How do I send and receive messages?",
+        "answer": "When you type and send a message in a chat room, it is immediately delivered to all users participating in that chat room."
+    },
+    {
+        "category": "Sharing",
+        "categoryKor": "Sharing",
+        "title": "How do I invite friends to a chat room?",
+        "answer": "After creating a chat room, you can generate a special invitation link using the 'Share Chat Room' feature. Send this link to your friends, and they can join the chat room."
+    },
+    {
+        "category": "Notifications",
+        "categoryKor": "Notifications",
+        "title": "How do I know when I receive new messages?",
+        "answer": "When a new message arrives, you will be immediately notified via push notification. You can receive notifications even if the app is not running."
+    },
+    {
+        "category": "Device Management",
+        "categoryKor": "Device Management",
+        "title": "Can I use CloudTalk on multiple devices?",
+        "answer": "Yes, you can. You can use CloudTalk on multiple Apple devices such as iPhone and iPad with the same iCloud account, and your chat history will be synchronized across all devices."
+    },
+    {
+        "category": "Security & Privacy",
+        "categoryKor": "Security & Privacy",
+        "title": "Is my data securely protected?",
+        "answer": "Yes, CloudTalk securely stores all your data in your personal iCloud account. Sensitive information remains private, and only necessary information is shared with other users. All communications are encrypted and transmitted securely."
+    },
+    {
+        "category": "Troubleshooting",
+        "categoryKor": "Troubleshooting",
+        "title": "The keyboard disappears when I type a message.",
+        "answer": "With the latest update, the issue of the keyboard disappearing while typing messages has been improved. The keyboard now remains active even while you are sending messages."
+    },
+    {
+        "category": "Troubleshooting",
+        "categoryKor": "Troubleshooting",
+        "title": "Screen scrolling is strange when new messages are received.",
+        "answer": "When new messages arrive or you send a message, the screen will now smoothly scroll to the latest message position automatically. You can now easily view the latest conversations at all times."
+    }
+]
