@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">CloudTalk 자주 묻는 질문 (FAQ)</title>
+    <style>
+        /* CSS 변수: 색상 및 스타일 관리 */
+        :root {
+            --primary-color: #A490E5;
+            --text-color: #333;
+            --secondary-text-color: #888;
+            --border-color: #eee;
+            --background-color: #f9f9f9;
+            --white-color: #fff;
+            --active-tab-bg: var(--primary-color);
+            --active-tab-text: var(--white-color);
+        }
+
+        /* 기본 스타일 초기화 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* 전체 컨테이너 */
+        .faq-container {
+            width: 100%;
+            max-width: 700px;
+            background-color: var(--white-color);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 메인 제목 */
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .faq-header h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            margin-left: 20px;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+        }
+
+        /* 검색창 */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+        }
+
+        .search-bar svg {
+            width: 20px;
+            height: 20px;
+            fill: #999;
+            margin-right: 10px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .search-bar input::placeholder {
+            color: #ccc;
+        }
+
+        /* FAQ 목록 */
+        .faq-list {
+            list-style: none;
+        }
+
+        .faq-item {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .faq-category {
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .faq-title {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        
+        .faq-question svg {
+            width: 16px;
+            height: 16px;
+            fill: #aaa;
+            transition: transform 0.3s ease;
+            flex-shrink: 0; /* 아이콘이 찌그러지지 않도록 */
+            margin-left: 10px;
+        }
+
+        /* 답변 영역 */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* 활성화 상태 스타일 */
+        .faq-item.active .faq-answer {
+            max-height: 500px; /* Adjusted max-height for typical FAQ answers */
+            padding-top: 15px;
+            transition: max-height 0.5s ease-in, padding 0.5s ease-in;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        /* 반응형 디자인: 화면 너비가 600px 이하일 때 (모바일) */
+        @media (max-width: 600px) {
+            .faq-container {
+                padding: 16px;
+            }
+            
+            .faq-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .faq-header h2 {
+                font-size: 22px;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+
+            .language-selector {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .faq-title {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="faq-container">
+        <header class="faq-header">
+            <h2 id="mainTitle">CloudTalk 자주 묻는 질문 (FAQ)</h2>
+            <select id="languageSelector" class="language-selector">
+                <option value="ko">한국어</option>
+                <option value="en">English</option>
+                <option value="zh-Hans">简体中文</option>
+                <option value="zh-Hant">繁體中文</option>
+            </select>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <div class="search-bar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="궁금한 점을 검색해보세요">
+                </div>
+            </section>
+
+            <section class="faq-list-section">
+                <ul class="faq-list"></ul>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqList = document.querySelector('.faq-list');
+            const searchInput = document.getElementById('searchInput');
+            const languageSelector = document.getElementById('languageSelector');
+            const mainTitle = document.getElementById('mainTitle');
+            const pageTitle = document.getElementById('pageTitle');
+
+            const translations = {
+                "ko": {
+                    "mainTitle": "구름톡 자주 묻는 질문 (FAQ)",
+                    "pageTitle": "구름톡 자주 묻는 질문 (FAQ)",
+                    "searchPlaceholder": "궁금한 점을 검색해보세요",
+                    "appName": "구름톡"
+                },
+                "en": {
+                    "mainTitle": "GureumTalk Frequently Asked Questions (FAQ)",
+                    "pageTitle": "GureumTalk Frequently Asked Questions (FAQ)",
+                    "searchPlaceholder": "Search for your questions",
+                    "appName": "GureumTalk"
+                },
+                "zh-Hans": {
+                    "mainTitle": "云语聊 常见问题 (FAQ)",
+                    "pageTitle": "云语聊 常见问题 (FAQ)",
+                    "searchPlaceholder": "搜索您的问题",
+                    "appName": "云语聊"
+                },
+                "zh-Hant": {
+                    "mainTitle": "雲聊 常見問題 (FAQ)",
+                    "pageTitle": "雲聊 常見問題 (FAQ)",
+                    "searchPlaceholder": "搜尋您的問題",
+                    "appName": "雲聊"
+                }
+            };
+
+            let currentFaqData = [];
+
+            async function loadLanguage(lang) {
+                try {
+                    const response = await fetch(`faq-${lang}.json`);
+                    if (!response.ok) {
+                        throw new Error(`Failed to load FAQ data for ${lang}: ${response.statusText}`);
+                    }
+                    currentFaqData = await response.json();
+                    renderFaqList();
+                    updateStaticText(lang);
+                    filterAndSearch(); // Re-filter after loading new language
+                    handleUrlFragment(); // Handle URL fragment after content is rendered
+                } catch (error) {
+                    console.error(error);
+                    faqList.innerHTML = `<p style="text-align: center; color: red;">Error loading FAQs. Please try again later.</p>`;
+                }
+            }
+
+            function renderFaqList() {
+                faqList.innerHTML = '';
+                currentFaqData.forEach((item, index) => {
+                    const itemId = (index + 1).toString(); // Assign numerical ID
+                    const listItem = document.createElement('li');
+                    listItem.className = 'faq-item';
+                    listItem.setAttribute('data-category', item.category);
+                    listItem.id = itemId; // Assign the ID
+
+                    listItem.innerHTML = `
+                        <div class="faq-question">
+                            <div class="faq-text">
+                                <div class="faq-category">${item.categoryKor}</div>
+                                <p class="faq-title">${item.title}</p>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                        </div>
+                        <div class="faq-answer">
+                            ${item.answer}
+                        </div>
+                    `;
+                    faqList.appendChild(listItem);
+                });
+            }
+
+            function updateStaticText(lang) {
+                mainTitle.textContent = translations[lang].mainTitle;
+                pageTitle.textContent = translations[lang].pageTitle;
+                searchInput.placeholder = translations[lang].searchPlaceholder;
+            }
+
+            function filterAndSearch() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const faqItems = document.querySelectorAll('.faq-item');
+
+                faqItems.forEach(item => {
+                    const category = item.getAttribute('data-category').toLowerCase();
+                    const title = item.querySelector('.faq-title').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+                    const matchesSearch = (category.includes(searchTerm) || title.includes(searchTerm) || answer.includes(searchTerm));
+
+                    if (matchesSearch) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            function handleUrlFragment() {
+                if (window.location.hash) {
+                    const targetId = window.location.hash.substring(1); // Remove the #
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        // Close all other active items first
+                        document.querySelectorAll('.faq-item.active').forEach(item => {
+                            item.classList.remove('active');
+                        });
+
+                        // Expand the target item
+                        targetElement.classList.add('active');
+
+                        // Scroll to the target item
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            }
+
+            function setupEventListeners() {
+                searchInput.addEventListener('input', filterAndSearch);
+
+                faqList.addEventListener('click', function(e) {
+                    const question = e.target.closest('.faq-question');
+                    if (question) {
+                        const faqItem = question.parentElement;
+                        faqItem.classList.toggle('active');
+                    }
+                });
+
+                languageSelector.addEventListener('change', (event) => {
+                    const selectedLang = event.target.value;
+                    localStorage.setItem('cloudtalkFaqLang', selectedLang);
+                    loadLanguage(selectedLang);
+                });
+
+                // Listen for hash changes (e.g., if user navigates within the page using hash links)
+                window.addEventListener('hashchange', handleUrlFragment);
+            }
+
+            // Function to detect browser language and map to supported languages
+            function getBrowserLanguage() {
+                const browserLang = navigator.language || navigator.languages[0];
+                
+                if (browserLang.startsWith('ko')) {
+                    return 'ko';
+                } else if (browserLang.startsWith('en')) {
+                    return 'en';
+                } else if (browserLang.startsWith('zh')) {
+                    // Differentiate Simplified and Traditional Chinese
+                    if (browserLang.includes('Hans') || browserLang.includes('CN')) {
+                        return 'zh-Hans';
+                    } else if (browserLang.includes('Hant') || browserLang.includes('TW')) {
+                        return 'zh-Hant';
+                    } else {
+                        // Default generic Chinese to Simplified
+                        return 'zh-Hans';
+                    }
+                } else {
+                    // Fallback to English if no match, or Korean as a primary default
+                    return 'ko'; // Or 'en' if English is preferred global default
+                }
+            }
+
+            // Initialize language based on localStorage, then browser language, then default to 'ko'
+            const savedLang = localStorage.getItem('cloudtalkFaqLang');
+            const initialLang = savedLang || getBrowserLanguage();
+
+            // Set the selector value to ensure it matches the loaded language
+            languageSelector.value = initialLang;
+            loadLanguage(initialLang);
+            setupEventListeners();
+        });
+    </script>
+
+</body>
+</html>
